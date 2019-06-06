@@ -1,6 +1,4 @@
 #include "sort.h"
-#include <iostream>
-using namespace std;
 
 void CountSort(int arr[], int size)
 {
