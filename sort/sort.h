@@ -17,4 +17,7 @@ void InsertSort(int arr[], int size);
 // 5.øÏÀŸ≈≈–Ú
 void QuickSort(int arr[], int size);
 
+// 6.πÈ≤¢≈≈–Ú
+void MergeSort(int arr[], int size);
+
 #endif // !__SORT_HEAD__

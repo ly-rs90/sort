@@ -79,6 +79,20 @@ int main()
 		cout << arrTest[i] << ',';
 	}
 
+	cout << endl << endl << "******************¹é²¢ÅÅĞò²âÊÔ*********************" << endl;
+	cout << "Ëæ»úÊı×é£º";
+	for (int i = 0; i < 10; i++)
+	{
+		arrTest[i] = rand() % 1000;
+		cout << arrTest[i] << ',';
+	}
+	cout << endl << "ÅÅĞò½á¹û£º";
+	MergeSort(arrTest, 10);
+	for (int i = 0; i < 10; i++)
+	{
+		cout << arrTest[i] << ',';
+	}
+
 	delete[] arrTest;
 	getchar();
 	return 0;

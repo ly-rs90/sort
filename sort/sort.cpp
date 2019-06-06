@@ -1,4 +1,6 @@
 #include "sort.h"
+#include <iostream>
+using namespace std;
 
 void CountSort(int arr[], int size)
 {
@@ -124,4 +126,37 @@ void QuickSort(int arr[], int size)
 	*pHead = iBase;
 	QuickSort(arr, pHead - arr);
 	QuickSort(pTail + 1, &arr[size - 1] - pTail);
+}
+
+void MergeSort(int arr[], int size)
+{
+	if (size <= 1 || !arr) return;
+
+	// 将数组分成两份
+	int iHalf = size / 2;
+	int iLeft = size - iHalf;
+
+	// 分别对两份排序
+	MergeSort(arr, iHalf);
+	MergeSort(&arr[iHalf], iLeft);
+
+	// 将两份归并到一起
+	int *iTemp = new int[size];
+
+	int i = 0, j = 0, k = 0;
+	
+	while (i < iHalf && j < iLeft) {
+		iTemp[k++] = arr[i] > arr[iHalf + j] ? arr[iHalf + j++] : arr[i++];
+	}
+	while (i < iHalf) {
+		iTemp[k++] = arr[i++];
+	}
+	while (j < iLeft) {
+		iTemp[k++] = arr[iHalf + j++];
+	}
+	for (int i = 0; i < size; i++) {
+		arr[i] = iTemp[i];
+	}
+
+	delete[] iTemp;
 }
